@@ -1,7 +1,8 @@
 class Wish:
-
-    def __init__(self, value, savings = None):
+#value cant be smaller than savings. i should check this!
+    def __init__(self, description, value, savings = None):
         self.value = value
+        self.description = description
         if savings is None:
             self.savings = 0
         else:
