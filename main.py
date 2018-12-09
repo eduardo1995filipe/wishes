@@ -1,5 +1,4 @@
 import WishManager
-import Wish
 
 def main():
 
