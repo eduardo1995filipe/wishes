@@ -1,6 +1,7 @@
 class Wish:
 #value cant be smaller than savings. i should check this!
-    def __init__(self, description, value, savings = None):
+    def __init__(self, id, description, value, savings = None):
+        self.id = id
         self.value = value
         self.description = description
         if savings is None:
@@ -24,3 +25,8 @@ class Wish:
 
     def is_value_reached(self):
         return self.savings == self.value
+
+    def __str__(self):
+        return "[ id: " + str(id) + " | description: " + self.description + " | value: " + str(self.value) + " | savings: " + str(self.savings) + " ]"
+
+    __repr__ = __str__
