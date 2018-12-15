@@ -7,17 +7,19 @@ class WishManager:
 
     def createWish(self, description, value, savings = None):
         if savings is None:
-            new_wish = Wish.Wish(self.getNextID(), description ,value)
+            new_wish = Wish.Wish(self.getNextID(), description, float(value))
         else:
-            new_wish = Wish.Wish(description ,value, savings)
+            new_wish = Wish.Wish(self.getNextID(), description, float(value), float(savings))
         self.wish_list.append(new_wish)
 
     def getAllWishes(self):
         return self.wish_list
 
     def removeWishById(self, id):
-        #remove list
-        pass
+        for wish in self.wish_list:
+            if wish.id == id:
+                self.wish_list.remove(wish)
+                return
 
     def getNextID(self):
         max_id = 0  

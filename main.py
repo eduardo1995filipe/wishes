@@ -1,5 +1,6 @@
 import WishManager
 
+
 def main():
 
         wish_manager = WishManager.WishManager()
@@ -20,11 +21,18 @@ def main():
                         for wish in wish_list:
                                 print(wish)
                 elif value == 2:
-                        description = input("insert a description:")
-                        value = float(input("insert a value:"))
-                        savings = float(input("insert your savings for this wish(pass if you don't have savings yet):"))
+                        description = input("insert a description: ")
+                        value = float(input("insert a value: "))
+                        savings = float(input("insert your savings for this wish(pass if you don't have savings yet): "))
                         wish_manager.createWish(description = description, value = value, savings = savings)
                         print("Expense successfully added :D")
+                elif value == 3:
+                        wish_list = wish_manager.getAllWishes()
+                        for wish in wish_list:
+                                print(wish)
+                        id = int(input("insert the id of the wish that you want to unwish: "))
+                        wish_manager.removeWishById(id)
+                        print("successfully unwished!")
 
                         
 

@@ -27,6 +27,10 @@ class Wish:
         return self.savings == self.value
 
     def __str__(self):
-        return "[ id: " + str(id) + " | description: " + self.description + " | value: " + str(self.value) + " | savings: " + str(self.savings) + " ]"
+        id = str(self.id)
+        desc = str(self.description)
+        value = str(self.value)
+        savings = str(self.savings)
+        return "[ id: " + id + " | description: " + desc + " | value: " + value + " | savings: " + savings + " ]"
 
     __repr__ = __str__
